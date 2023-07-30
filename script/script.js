@@ -11,22 +11,16 @@ let req = {
 
 let arr;
 
-function retriveData(data) {
-    arr = data;
-    pushGridContent(); 
-    pushListContent(); 
-}
-
 let p = fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en");
 p.then((response1) =>{
-    console.log(response1);
     if (!response1.ok) {
         throw new Error('Network response was not ok');
     }
     return response1.json();
     
 }).then((response2)=>{
-    console.log(response2);
+    arr = response2;
+    pushGridContent();
     retriveData(response2);
 })
 p.catch((err)=>{
@@ -47,7 +41,6 @@ listID.style.display = 'none';
 
 listElement.addEventListener('click',listView);
 gridElement.addEventListener('click', gridView);
-
 
 
 function listView(){
@@ -83,9 +76,9 @@ function pushGridContent(){
                         <div class="full-name">${element.name}</div>
                     </div>
                 <div class="capsule" id="${element.name}">
-                    <div class="percentage">${element.price_change_percentage_24h}</div>
+                    <div class="percentage" id="${element.id}">${element.price_change_percentage_24h}</div>
                 </div>
-                <div class="current-price">$  ${element.current_price}</div>
+                <div class="current-price">$ ${element.current_price}</div>
                 <div class="total-volume">Total Volume: ${element.total_volume.toLocaleString()}</div>
                 <div class="market-cap">Market Cap: ${element.market_cap.toLocaleString()}</div>
             </div>
