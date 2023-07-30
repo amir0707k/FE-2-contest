@@ -49,8 +49,9 @@ listElement.addEventListener('click',listView);
 gridElement.addEventListener('click', gridView);
 
 
-pushGridContent();
+
 function listView(){
+    pushListContent();
     listElement.classList.add('grid-list-title');
     listDiv.classList.add('blue-bar');
     gridDiv.classList.remove('blue-bar');
