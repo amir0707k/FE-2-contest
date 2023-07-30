@@ -376,4 +376,32 @@ table{
         overflow: scroll;
         height: fit-content;
     }
+
+    /* from here */
+    .crypto-names-list-view {
+    word-break: break-all;
+    }
+    table {
+    margin: 10px auto;
+}
+   .list-view {
+        width: 100%;
+        overflow-x: auto; /* Use horizontal scrolling if necessary */
+    }
+
+    table {
+        min-width: 100%; /* Ensure the table covers the available width */
+    }
+
+    /* Adjust the width of the table cells for better visibility */
+    .crypto-info-list {
+        width: 100%;
+    }
+
+    /* Ensure the table headers are also visible */
+    .list-view.result {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
