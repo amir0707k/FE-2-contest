@@ -205,7 +205,6 @@ body {
     font-weight: 700;
     display: flex;
     justify-content: space-around;
-    cursor: pointer;
     margin-bottom:24px;
 }
 
@@ -213,7 +212,6 @@ body {
     text-align: center;
     width: 30%;
     padding-bottom: 20px;
-
     border-bottom:2px solid #007bff;
 }
 button{
@@ -221,10 +219,12 @@ button{
     background-color: transparent;
     color: white;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .grid-list-title{
     color: #007bff;
+  
 }
 
 .list-view{
@@ -305,6 +305,10 @@ table{
     .toggle-container {
         position: relative;
     }
+    .card{
+        margin: auto;
+        justify-content: center;
+    }
 
     /* .toggle-btn, .toggle {
         display: block;
@@ -323,6 +327,11 @@ table{
         max-width: 1200px;
         margin: auto;
     }
+    .card{
+        width: 50%;
+        margin: auto;
+        justify-content: center;
+    }
 }
 
 @media (min-width: 928px) and (max-width: 1100px) {
@@ -333,6 +342,10 @@ table{
         justify-content: center;
         max-width: 1200px;
         margin: auto;
+    }
+    .card{
+        margin: auto;
+        justify-content: center;
     }
 }
 @media (min-width: 1101px) and (max-width: 1240px) {
@@ -355,5 +368,12 @@ table{
         width:50% ;
         margin: auto;
         justify-content: center;
+    }
+}
+@media (max-width: 718px) {
+    .list-view{
+        width: 100%;
+        overflow: scroll;
+        height: fit-content;
     }
 }

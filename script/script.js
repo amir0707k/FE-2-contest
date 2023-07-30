@@ -28,6 +28,7 @@ p.then((response1) =>{
 }).then((response2)=>{
     arr = response2;
     pushGridContent();
+    pushListContent();
 })
 p.catch((err)=>{
     console.log(err);
@@ -48,15 +49,17 @@ listID.style.display = 'none';
 listElement.addEventListener('click',listView);
 gridElement.addEventListener('click', gridView);
 
+let isListView = false;
 
 function listView(){
-    pushListContent();
+
     listElement.classList.add('grid-list-title');
     listDiv.classList.add('blue-bar');
     gridDiv.classList.remove('blue-bar');
     gridElement.classList.remove('grid-list-title');
     gridID.style.display = 'none';
     listID.style.display = 'block';
+    isListView = true;
 
 }
 function gridView(){
@@ -66,6 +69,7 @@ function gridView(){
     listElement.classList.remove('grid-list-title');
     listID.style.display = 'none';
     gridID.style.display = 'block';
+    isListView = false;
 }
 
 
@@ -104,6 +108,7 @@ function pushGridContent(){
 }
 
 function pushListContent(){
+
     const table = document.createElement('table');
     list.appendChild(table);
     arr.forEach(element => {
@@ -143,5 +148,6 @@ function pushListContent(){
                     list_price.style.color = "red";
                 }
     });
+    
 }
 });
