@@ -9,6 +9,13 @@ let req = {
 };
 
 
+// Add an event listener to the hamburger icon to toggle the menu visibility
+document.querySelector('.hamburger-icon').addEventListener('click', function () {
+    const navLinks = document.querySelector('.nav-links');
+    navLinks.classList.toggle('active');
+});
+
+
 let arr;
 
 let p = fetch("https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&locale=en");
@@ -50,7 +57,6 @@ function listView(){
     gridElement.classList.remove('grid-list-title');
     gridID.style.display = 'none';
     listID.style.display = 'block';
-    
 
 }
 function gridView(){
@@ -104,14 +110,19 @@ function pushListContent(){
         const row = document.createElement('tr');
         let str = `<td> 
                     <div class="crypto-info-list">
-                        <div class="icon"><img class="card-img" src="${element.image}" alt="${element.name}"></div>
-                        <div class="short-name">${element.symbol.toUpperCase()}</div>
-                        <div class="full-name">${element.name}</div>
+                        <div class="icon">
+                            <img class="card-img" src="${element.image}" alt="${element.name}">
+                        </div>
+                        <div class="crypto-names-list-view">
+                            <div class="short-name">${element.symbol.toUpperCase()}</div>
+                            <div class="full-name">${element.name}</div>
+                        </div>
+                        
                     </div>
                 </td>
                 <td> 
                     <div class="capsule" id="${element.market_cap_rank}">
-                        <div class="percentage">${element.price_change_percentage_24h}</div>
+                        <div class="percentage" id="${element.symbol}">${element.price_change_percentage_24h}</div>
                     </div>
                 </td>
                 <td>
