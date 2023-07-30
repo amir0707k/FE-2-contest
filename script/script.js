@@ -21,7 +21,6 @@ p.then((response1) =>{
 }).then((response2)=>{
     arr = response2;
     pushGridContent();
-    retriveData(response2);
 })
 p.catch((err)=>{
     console.log(err);
@@ -68,13 +67,16 @@ function pushGridContent(){
     arr.forEach(element => {
         const container = document.createElement('div');
         let str = `
-        <div class="card">
-                    <div class="crypto-info">
-                        <div>
-                        <img class="card-img" src="${element.image}" alt="${element.name}"></div>
-                        <div class="short-name">${element.symbol}</div>
+            <div class="card">
+                <div class="crypto-info-grid">
+                    <div class="grid-image-div">
+                        <img class="card-img" src="${element.image}" alt="${element.name}">
+                    </div>
+                    <div class="crypto-names">
+                        <div class="short-name">${element.symbol.toUpperCase()}</div>
                         <div class="full-name">${element.name}</div>
                     </div>
+                </div>
                 <div class="capsule" id="${element.name}">
                     <div class="percentage" id="${element.id}">${element.price_change_percentage_24h}</div>
                 </div>
@@ -101,9 +103,9 @@ function pushListContent(){
     arr.forEach(element => {
         const row = document.createElement('tr');
         let str = `<td> 
-                    <div class="crypto-info ">
+                    <div class="crypto-info-list">
                         <div class="icon"><img class="card-img" src="${element.image}" alt="${element.name}"></div>
-                        <div class="short-name">${element.symbol}</div>
+                        <div class="short-name">${element.symbol.toUpperCase()}</div>
                         <div class="full-name">${element.name}</div>
                     </div>
                 </td>

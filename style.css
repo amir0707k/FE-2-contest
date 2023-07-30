@@ -120,19 +120,31 @@ body {
 
 .card {
     width: 250px;
-    background-color: #404041;
+    background-color: #1A1B1A;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 20px;
     text-align: left;
 }
 
-.crypto-info {
+.crypto-info-grid {
+    color: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.crypto-info-list{
     color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px;
+}
+.crypto-names{
+    display: flex;
+    flex-direction: column;
+    padding-left: 16px;
 }
 
 .card-img {
@@ -226,54 +238,3 @@ table{
 
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide the regular navigation links */
-    }
-    
-    .toggle-container {
-        display: block; /* Show the hamburger icon */
-    }
-    
-    /* Adjust the styles of the toggle button */
-    .toggle-btn {
-        display: block;
-        width: 30px;
-        height: 30px;
-        background-color: #333;
-        position: relative;
-        cursor: pointer;
-    }
-    
-    .toggle-btn:before,
-    .toggle-btn:after {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 2px;
-        background-color: #fff;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-    }
-    
-    .toggle-btn:before {
-        top: 8px;
-    }
-    
-    .toggle-btn:after {
-        top: -8px;
-    }
-    
-    /* Show the navigation links when the toggle is checked (hamburger icon is clicked) */
-    .toggle:checked ~ .nav-links {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust the top position based on your design */
-        right: 10px; /* Adjust the right position based on your design */
-        background-color: #1b1b1b;
-        padding: 10px;
-        border: 1px solid #ccc;
-    }
-}
