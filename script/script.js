@@ -74,7 +74,20 @@ function pushGridContent(){
     arr.forEach(element => {
         const container = document.createElement('div');
         let str = `
-        <div class="icon"><img class="card-img" src="${element.image}" alt="${element.name}"></div>
+        <div class="card">
+                    <div class="crypto-info">
+                        <div>
+                        <img class="card-img" src="${element.image}" alt="${element.name}"></div>
+                        <div class="short-name">${element.symbol}</div>
+                        <div class="full-name">${element.name}</div>
+                    </div>
+                <div class="capsule" id="${element.name}">
+                    <div class="percentage">${element.price_change_percentage_24h}</div>
+                </div>
+                <div class="current-price">$  ${element.current_price}</div>
+                <div class="total-volume">Total Volume: ${element.total_volume.toLocaleString()}</div>
+                <div class="market-cap">Market Cap: ${element.market_cap.toLocaleString()}</div>
+            </div>
         `
         container.innerHTML = str;
         grid.appendChild(container);
@@ -106,7 +119,7 @@ function pushListContent(){
                     </div>
                 </td>
                 <td>
-                    <div class="current-price" id="${element.symbol}">₹  ${element.current_price}</div>
+                    <div class="current-price" id="${element.symbol}">$  ${element.current_price}</div>
                 </td>
                 <td>
                     <div class="total-volume">${element.total_volume.toLocaleString()}</div>

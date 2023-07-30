@@ -113,7 +113,10 @@ body {
     color: white;
 }
 
-
+.card-img{
+    height: 100px;
+    width: 100px;
+}
 
 .card {
     width: 250px;
@@ -132,10 +135,9 @@ body {
     margin-bottom: 20px;
 }
 
-.icon {
-    font-size: 36px;
-    color: #007bff;
-    margin-bottom: 5px;
+.card-img {
+    width: 80px;
+    height: 80px;
 }
 
 .short-name {
